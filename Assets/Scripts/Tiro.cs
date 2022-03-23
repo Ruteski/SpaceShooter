@@ -18,4 +18,12 @@ public class Tiro : MonoBehaviour
     {
         
     }
+
+    //meu evento de trigger com o inimigo
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //esse evento vai rodar sempre que ele tiver uma colisao com alguem
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
+    }
 }
