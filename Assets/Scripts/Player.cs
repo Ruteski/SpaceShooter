@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //variavel de velocidade
+    public float velocidade = 7f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +16,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 movimento = transform.position;
+
         //checando se esta sendo apertado seta pra direita
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x + 0.01f, transform.position.y, transform.position.z);
+            //transform.position = new Vector3(transform.position.x + velocidade, transform.position.y, transform.position.z);
+            //aplicando velocidade e garantindo que ela nao depende do fps do jogo
+            movimento.x += velocidade * Time.deltaTime;
         } 
-        else if (Input.GetKey(KeyCode.LeftArrow)) //checando se esta sendo apertado seta pra esquerda
+        
+        if (Input.GetKey(KeyCode.LeftArrow)) //checando se esta sendo apertado seta pra esquerda
         {
-            transform.position = new Vector3(transform.position.x - 0.01f, transform.position.y, transform.position.z);
+            //transform.position = new Vector3(transform.position.x - velocidade, transform.position.y, transform.position.z);
+            movimento.x -= velocidade * Time.deltaTime;
         }
+
+        transform.position = movimento;
     }
 }
