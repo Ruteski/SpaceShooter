@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //variavel de velocidade
-    public float velocidade = 7f;
+    public float velocidade = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         Vector3 movimento = transform.position;
 
         //checando se esta sendo apertado seta pra direita
-        if (Input.GetKey(KeyCode.RightArrow))
+        /*if (Input.GetKey(KeyCode.RightArrow))
         {
             //transform.position = new Vector3(transform.position.x + velocidade, transform.position.y, transform.position.z);
             //aplicando velocidade e garantindo que ela nao depende do fps do jogo
@@ -30,7 +30,10 @@ public class Player : MonoBehaviour
         {
             //transform.position = new Vector3(transform.position.x - velocidade, transform.position.y, transform.position.z);
             movimento.x -= velocidade * Time.deltaTime;
-        }
+        }*/
+
+        //refazendo a movimentacao horizontal
+        movimento.x += Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
 
         transform.position = movimento;
     }
