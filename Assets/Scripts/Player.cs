@@ -7,10 +7,13 @@ public class Player : MonoBehaviour
     //variavel de velocidade
     public float velocidade = 3f;
 
+    //descobrindo quem é meu tiro
+    public GameObject meuTiro;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("bom dia");
+        //Debug.Log("bom dia");
     }
 
     // Update is called once per frame
@@ -34,6 +37,13 @@ public class Player : MonoBehaviour
 
         //refazendo a movimentacao horizontal
         movimento.x += Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
+
+        //criando o tiro
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //criando o meu tiro
+            Instantiate(meuTiro, transform.position, transform.rotation);
+        }
 
         transform.position = movimento;
     }
