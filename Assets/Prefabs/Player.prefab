@@ -96,3 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 3
+  meuTiro: {fileID: 0}
+  xMin: -2.2
+  xMax: 2.2

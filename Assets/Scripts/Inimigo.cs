@@ -28,10 +28,10 @@ public class Inimigo : MonoBehaviour
     }
 
     //quando for destruido
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
 
-    }
+    }*/
 
     //criando metodo para morte do inimigo
     public void Morrendo()
