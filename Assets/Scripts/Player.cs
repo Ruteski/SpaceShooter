@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     //descobrindo quem é meu tiro
     public GameObject meuTiro;
 
+    public float xMin = -2.2f;
+    public float xMax = 2.2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,9 @@ public class Player : MonoBehaviour
 
         //refazendo a movimentacao horizontal
         movimento.x += Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
+
+        //garantindo que o player nao saia  do limite X da tela
+        movimento.x = Mathf.Clamp(movimento.x, xMin, xMax);
 
         //criando o tiro
         if (Input.GetButtonDown("Fire1"))

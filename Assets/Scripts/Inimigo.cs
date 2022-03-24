@@ -30,7 +30,13 @@ public class Inimigo : MonoBehaviour
     //quando for destruido
     private void OnDestroy()
     {
+
+    }
+
+    //criando metodo para morte do inimigo
+    public void Morrendo()
+    {
         GameObject explosao = Instantiate(minhaExplosao, transform.position, transform.rotation);
-        Destroy(explosao, 0.5f);
+        Destroy(explosao, 0.4f);
     }
 }

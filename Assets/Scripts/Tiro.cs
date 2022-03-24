@@ -22,6 +22,10 @@ public class Tiro : MonoBehaviour
     //meu evento de trigger com o inimigo
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //chamando o metodo de morte do inimigo
+        //collision = quem eu colidi
+        collision.GetComponent<Inimigo>().Morrendo();
+
         //esse evento vai rodar sempre que ele tiver uma colisao com alguem
         Destroy(collision.gameObject);
         Destroy(gameObject);
