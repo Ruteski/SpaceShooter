@@ -48,7 +48,7 @@ public class Inimigo : MonoBehaviour
         if (collision.CompareTag("fim"))
         {
             //reiniciando o jogo, vai para a tela inicial
-            SceneManager.LoadScene("Inicio");
+            SceneManager.LoadScene(0);
         }
     }
 }
