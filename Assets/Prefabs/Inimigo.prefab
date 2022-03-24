@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meuRB: {fileID: 1775770334063931782}
   velocidade: 2
+  minhaExplosao: {fileID: 4854568882972888337, guid: 5adba4266f5bfba459c4ede5a38f2fd0, type: 3}
 --- !u!50 &1775770334063931782
 Rigidbody2D:
   serializedVersion: 4

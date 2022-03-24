@@ -10,6 +10,9 @@ public class Inimigo : MonoBehaviour
     //define a velocidade
     public float velocidade = 2f;
 
+    //saber quem é minha explosao
+    public GameObject minhaExplosao;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +25,12 @@ public class Inimigo : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //quando for destruido
+    private void OnDestroy()
+    {
+        GameObject explosao = Instantiate(minhaExplosao, transform.position, transform.rotation);
+        Destroy(explosao, 0.5f);
     }
 }
