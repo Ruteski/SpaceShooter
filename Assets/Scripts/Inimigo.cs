@@ -39,4 +39,14 @@ public class Inimigo : MonoBehaviour
         GameObject explosao = Instantiate(minhaExplosao, transform.position, transform.rotation);
         Destroy(explosao, 0.4f);
     }
+
+    //checando se um inimigo tocou em um istrigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //identificando se a colisao é o fim do jogo
+        if (collision.CompareTag("fim"))
+        {
+            Debug.Log("fim de jogo");
+        }
+    }
 }
