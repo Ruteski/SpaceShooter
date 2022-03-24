@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inimigo : MonoBehaviour
 {
@@ -46,7 +47,8 @@ public class Inimigo : MonoBehaviour
         //identificando se a colisao é o fim do jogo
         if (collision.CompareTag("fim"))
         {
-            Debug.Log("fim de jogo");
+            //reiniciando o jogo, vai para a tela inicial
+            SceneManager.LoadScene("Inicio");
         }
     }
 }
