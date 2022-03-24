@@ -99,3 +99,4 @@ MonoBehaviour:
   meuTiro: {fileID: 0}
   xMin: -2.2
   xMax: 2.2
+  somTiro: {fileID: 8300000, guid: 6fa63e68ae286564291320d888b28db8, type: 3}

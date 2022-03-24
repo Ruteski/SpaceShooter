@@ -14,6 +14,8 @@ public class Inimigo : MonoBehaviour
     //saber quem é minha explosao
     public GameObject minhaExplosao;
 
+    public AudioClip somExplosao;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,9 @@ public class Inimigo : MonoBehaviour
     {
         GameObject explosao = Instantiate(minhaExplosao, transform.position, transform.rotation);
         Destroy(explosao, 0.4f);
+
+        //som da explosao
+        AudioSource.PlayClipAtPoint(somExplosao, new Vector3(0f,0f,0f));
     }
 
     //checando se um inimigo tocou em um istrigger

@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public float xMin = -2.2f;
     public float xMax = 2.2f;
 
+    public AudioClip somTiro;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
         {
             //criando o meu tiro
             Instantiate(meuTiro, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(somTiro, Vector3.zero);
         }
 
         transform.position = movimento;
